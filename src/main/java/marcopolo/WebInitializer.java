@@ -1,8 +1,8 @@
 package marcopolo;
 
-import javax.servlet.ServletRegistration.Dynamic;
-
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import javax.servlet.ServletRegistration.Dynamic;
 
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -24,6 +24,6 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 	@Override
 	protected void customizeRegistration(Dynamic registration) {
 		registration.setAsyncSupported(true);
-	}
+	}  /*设置异步支持*/
 	
 }

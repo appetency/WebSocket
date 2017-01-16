@@ -13,12 +13,12 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
 	@Override
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-		registry.addHandler(marcoHandler(), "/marco").withSockJS();
+		registry.addHandler(marcoHandler(), "/marco").withSockJS();  /*将MarcoHandler映射到"/marco"*/
 	}
-  
+
 	@Bean
 	public MarcoHandler marcoHandler() {
 		return new MarcoHandler();
-	}
+	}  /*声明MarcoHandler bean*/
 
 }
