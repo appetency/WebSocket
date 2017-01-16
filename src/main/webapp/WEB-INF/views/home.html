@@ -10,25 +10,25 @@
     <script th:inline="javascript">
       var sock = new SockJS([[@{/marco}]]);
 
-      sock.onopen = function() {
+      sock.onopen = function() {     /*处理连接开启事件*/
     	  console.log('Opening');
     	  sayMarco();
       }
       
-      sock.onmessage = function(e) {
+      sock.onmessage = function(e) {        /*处理信息*/
     	  console.log('Received message: ', e.data);
     	  $('#output').append('Received "' + e.data + '"<br/>');
     	  setTimeout(function(){sayMarco()}, 2000);
       }
       
-      sock.onclose = function() {
+      sock.onclose = function() {          /*处理连接关闭事件*/
     	  console.log('Closing');
       }
       
       function sayMarco() {
     	  console.log('Sending Marco!');
     	  $('#output').append('Sending "Marco!"<br/>');
-    	  sock.send("Marco!");
+    	  sock.send("Marco!");             /*发送消息*/
       }
 
       $('#stop').click(function() {sock.close()});
